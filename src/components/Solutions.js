@@ -98,17 +98,7 @@ export default function Solutions() {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        {solutions}
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="2">
-              Click me!
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="2">
-            <Card.Body>Hello! I'm another body</Card.Body>
-          </Accordion.Collapse>
-        </Card>
+        {solutions}        
       </Accordion>
       <button onClick={handleSubmit}>More</button>
     </div>
