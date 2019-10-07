@@ -12,16 +12,30 @@ export default function Solution({ item }) {
     <div className="solution">
       <Card>
         <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey={item.key}>
-            {item.date} <br />
-            {item.problem} <br />
-            answer:{item.answer}
+          <Accordion.Toggle as={Card.Header} eventKey={item.key}>            
+            <p>Problem: <br/>
+            {item.problem}</p> <br />
+            <span className="solutionSpan">answer: { item.answer }</span> <span className="solutionSpan">solved: {item.date}</span>
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey={item.key}>
           <Card.Body>
             <ReactSandbox
-              theme="solarized_dark"
+              displayMode="horizontal-split"
+              executeOnCodeChange
+              executeOnCodeChangeDebounce={1000}
+              horizontalSplitOffset={50}
+              onDisplayModeButtonClick={function() {}}
+              permissions={[
+                "allow-pointer-lock",
+                "allow-popups",
+                "allow-modals",
+                "allow-same-origin",
+                "allow-scripts",
+                "allow-top-navigation",
+                "allow-forms"
+              ]}
+              theme="solarized_light"
               scriptEditor={{
                 defaultValue: `${item.solution} ReactDOM.render(\n <Solution />,\n  document.getElementById(\'root\')\n);`,
                 mode: "jsx",

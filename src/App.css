@@ -22,3 +22,11 @@ input#input1 {
   width: auto;
   margin: 0 auto;
 }
+
+p{
+  text-align: left;
+}
+
+.solutionSpan{
+  margin: 0 15px;
+}
